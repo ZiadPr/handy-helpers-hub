@@ -157,6 +157,14 @@
 @layer utilities {
   .bg-hero {
     background: var(--gradient-hero);
+    color: hsl(42 40% 96%);
+  }
+  .bg-hero h1,
+  .bg-hero h2,
+  .bg-hero h3,
+  .bg-hero p,
+  .bg-hero span:not(.text-gold):not([class*="text-primary"]) {
+    color: inherit;
   }
   .bg-gold-gradient {
     background: var(--gradient-gold);
