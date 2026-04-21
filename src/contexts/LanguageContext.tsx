@@ -9,7 +9,15 @@ type Ctx = {
   setLang: (l: Lang) => void;
 };
 
-const LanguageContext = createContext<Ctx | null>(null);
+const defaultCtx: Ctx = {
+  lang: "ar",
+  dir: "rtl",
+  t: translations.ar,
+  toggle: () => {},
+  setLang: () => {},
+};
+
+const LanguageContext = createContext<Ctx>(defaultCtx);
 
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   const [lang, setLangState] = useState<Lang>(() => {
@@ -39,8 +47,4 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   return <LanguageContext.Provider value={value}>{children}</LanguageContext.Provider>;
 };
 
-export const useLang = () => {
-  const ctx = useContext(LanguageContext);
-  if (!ctx) throw new Error("useLang must be used within LanguageProvider");
-  return ctx;
-};
+export const useLang = () => useContext(LanguageContext);
