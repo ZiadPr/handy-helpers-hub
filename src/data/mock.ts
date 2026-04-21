@@ -63,7 +63,7 @@ export type Provider = {
   avatar: string;
   bioAr: string;
   bioEn: string;
-  joinedAt: string;
+  joinedAt?: string;
   verifiedAt?: string;
   idVerified?: boolean;
   phoneVerified?: boolean;
