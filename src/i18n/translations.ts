@@ -1,6 +1,6 @@
 export type Lang = "ar" | "en";
 
-export const translations = {
+const dict = {
   ar: {
     brand: "صنايعي",
     tagline: "خدمات بيتك في مكان واحد",
@@ -193,6 +193,7 @@ export const translations = {
       glass: "Glass & alu",
     },
   },
-} as const;
+};
 
-export type Translations = typeof translations.ar;
+export type Translations = typeof dict.ar;
+export const translations: Record<Lang, Translations> = dict;
