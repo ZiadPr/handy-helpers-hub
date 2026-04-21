@@ -69,9 +69,11 @@ export default {
         },
       },
       fontFamily: {
-        display: ["Sora", "IBM Plex Sans Arabic", "system-ui", "sans-serif"],
-        body: ["Manrope", "IBM Plex Sans Arabic", "system-ui", "sans-serif"],
-        arabic: ["IBM Plex Sans Arabic", "system-ui", "sans-serif"],
+        display: ["Sora", "Noto Kufi Arabic", "Cairo", "IBM Plex Sans Arabic", "system-ui", "sans-serif"],
+        body: ["Manrope", "IBM Plex Sans Arabic", "Cairo", "Tajawal", "system-ui", "sans-serif"],
+        arabic: ["IBM Plex Sans Arabic", "Cairo", "Tajawal", "Noto Naskh Arabic", "system-ui", "sans-serif"],
+        kufi: ["Noto Kufi Arabic", "Cairo", "system-ui", "sans-serif"],
+        naskh: ["Noto Naskh Arabic", "IBM Plex Sans Arabic", "system-ui", "serif"],
       },
       borderRadius: {
         lg: "var(--radius)",
