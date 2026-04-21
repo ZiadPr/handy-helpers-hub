@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -6,9 +7,10 @@ import { Badge } from "@/components/ui/badge";
 import { useLang } from "@/contexts/LanguageContext";
 import { categories, providers, areas } from "@/data/mock";
 import { ProviderCard } from "@/components/site/ProviderCard";
-import { Search, MapPin, ArrowLeft, ArrowRight, Wrench, Store, Home as HomeIcon, Sparkles } from "lucide-react";
+import { Search, MapPin, ArrowLeft, ArrowRight, Wrench, Store, Home as HomeIcon, Sparkles, ShieldCheck, Star } from "lucide-react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import heroPro from "@/assets/hero-pro.jpg";
 
 const Index = () => {
   const { t, lang, dir } = useLang();
@@ -30,8 +32,13 @@ const Index = () => {
       {/* HERO */}
       <section className="relative overflow-hidden bg-hero text-primary-foreground">
         <div className="absolute inset-0 opacity-[0.06]" style={{ backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)", backgroundSize: "32px 32px" }} />
-        <div className="container relative py-16 md:py-24">
-          <div className="max-w-3xl mx-auto text-center space-y-6">
+        <div className="container relative py-16 md:py-24 grid lg:grid-cols-[1.1fr_1fr] gap-10 items-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="space-y-6 text-center lg:text-start"
+          >
             <Badge className="bg-gold/20 text-gold border-gold/30 hover:bg-gold/20">
               <Sparkles className="h-3 w-3 me-1" />
               {t.hero.eyebrow}
@@ -39,11 +46,11 @@ const Index = () => {
             <h1 className="font-display text-4xl md:text-6xl font-bold leading-tight text-balance">
               {t.hero.title}
             </h1>
-            <p className="text-lg text-primary-foreground/80 max-w-2xl mx-auto text-balance">
+            <p className="text-lg text-primary-foreground/80 max-w-2xl mx-auto lg:mx-0 text-balance">
               {t.hero.subtitle}
             </p>
 
-            <Card className="p-2 md:p-3 mt-8 max-w-2xl mx-auto bg-card/95 backdrop-blur shadow-elegant">
+            <Card className="p-2 md:p-3 mt-2 max-w-2xl mx-auto lg:mx-0 bg-card/95 backdrop-blur shadow-elegant">
               <div className="flex flex-col md:flex-row gap-2">
                 <div className="flex-1 flex items-center gap-2 px-3">
                   <Search className="h-4 w-4 text-muted-foreground shrink-0" />
@@ -71,19 +78,73 @@ const Index = () => {
               </div>
             </Card>
 
-            <div className="grid grid-cols-3 gap-4 max-w-xl mx-auto pt-8">
+            <div className="grid grid-cols-3 gap-4 max-w-xl mx-auto lg:mx-0 pt-4">
               {[
                 { v: "12K+", k: t.hero.stats.pros },
                 { v: "85K+", k: t.hero.stats.orders },
                 { v: "4.8★", k: t.hero.stats.rating },
               ].map((s, i) => (
-                <div key={i} className="text-center">
+                <div key={i} className="text-center lg:text-start">
                   <div className="font-display text-2xl md:text-3xl font-bold text-gold">{s.v}</div>
                   <div className="text-xs md:text-sm text-primary-foreground/70 mt-1">{s.k}</div>
                 </div>
               ))}
             </div>
-          </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.7, delay: 0.15 }}
+            className="relative hidden lg:block"
+          >
+            <div className="absolute -inset-6 bg-gold/20 blur-3xl rounded-full" />
+            <div className="relative rounded-3xl overflow-hidden shadow-elegant ring-1 ring-gold/20">
+              <img
+                src={heroPro}
+                alt="Professional tradesperson"
+                width={1024}
+                height={1024}
+                className="w-full h-[520px] object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent" />
+            </div>
+
+            {/* Floating cards */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6 }}
+              className="absolute -bottom-4 -start-6"
+            >
+              <Card className="p-3 flex items-center gap-3 shadow-elegant">
+                <div className="h-10 w-10 rounded-full bg-success/15 grid place-items-center">
+                  <ShieldCheck className="h-5 w-5 text-success" />
+                </div>
+                <div>
+                  <div className="text-xs text-muted-foreground">{lang === "ar" ? "محترفون موثقون" : "Verified pros"}</div>
+                  <div className="font-display font-bold text-primary">100%</div>
+                </div>
+              </Card>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.8 }}
+              className="absolute -top-4 -end-4"
+            >
+              <Card className="p-3 flex items-center gap-3 shadow-elegant">
+                <div className="h-10 w-10 rounded-full bg-gold-gradient grid place-items-center">
+                  <Star className="h-5 w-5 text-primary fill-primary" />
+                </div>
+                <div>
+                  <div className="text-xs text-muted-foreground">{lang === "ar" ? "متوسط التقييم" : "Avg rating"}</div>
+                  <div className="font-display font-bold text-primary">4.8 / 5</div>
+                </div>
+              </Card>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
@@ -113,9 +174,16 @@ const Index = () => {
       <section className="container py-20">
         <SectionHeader title={t.sections.mainTitle} sub={t.sections.mainSub} />
         <div className="grid md:grid-cols-3 gap-6 mt-10">
-          {mainGateways.map(({ icon: Icon, key, to, grad }) => (
-            <Link key={key} to={to}>
-              <Card className="group relative overflow-hidden p-8 h-full hover:shadow-elegant transition-all duration-300 hover:-translate-y-1">
+          {mainGateways.map(({ icon: Icon, key, to, grad }, i) => (
+            <motion.div
+              key={key}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ delay: i * 0.1, duration: 0.5 }}
+            >
+              <Link to={to}>
+                <Card className="group relative overflow-hidden p-8 h-full hover:shadow-elegant transition-all duration-300 hover:-translate-y-1">
                 <div className={`absolute -end-10 -top-10 h-40 w-40 rounded-full bg-gradient-to-br ${grad} opacity-10 group-hover:opacity-20 transition-opacity`} />
                 <div className={`relative h-14 w-14 rounded-2xl bg-gradient-to-br ${grad} grid place-items-center shadow-gold`}>
                   <Icon className="h-6 w-6 text-primary-foreground" />
@@ -125,8 +193,9 @@ const Index = () => {
                 <div className="mt-6 inline-flex items-center gap-2 text-primary font-semibold">
                   {t.main.explore} <Arrow className="h-4 w-4 group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-transform" />
                 </div>
-              </Card>
-            </Link>
+                </Card>
+              </Link>
+            </motion.div>
           ))}
         </div>
       </section>
