@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Progress } from "@/components/ui/progress";
 import { Stars } from "@/components/site/Stars";
+import { VerifiedBadge } from "@/components/site/VerifiedBadge";
 import { useLang } from "@/contexts/LanguageContext";
 import { translations } from "@/i18n/translations";
 import { Phone, MessageCircle, MapPin, Clock, ShieldCheck, Trophy, Zap, Crown, Award } from "lucide-react";
@@ -35,11 +36,11 @@ const ProviderProfile = () => {
         <div className="container py-12">
           <div className="flex flex-col md:flex-row gap-8 items-start">
             <div className="relative">
-              <img src={p.avatar} alt={name} className="h-32 w-32 rounded-3xl object-cover ring-4 ring-gold/30" />
+              <img src={p.avatar} alt={name} className="h-32 w-32 rounded-full object-cover ring-4 ring-gold/30" />
               {p.verified && (
-                <span className="absolute -bottom-2 -end-2 h-10 w-10 rounded-full bg-success text-success-foreground grid place-items-center ring-4 ring-primary">
-                  <ShieldCheck className="h-5 w-5" />
-                </span>
+                <div className="absolute -bottom-2 -end-2">
+                  <VerifiedBadge provider={p} size="lg" />
+                </div>
               )}
             </div>
             <div className="flex-1">
