@@ -63,9 +63,11 @@ const Index = () => {
                 </div>
                 <div className="flex items-center gap-2 px-3 md:border-s md:border-border">
                   <MapPin className="h-4 w-4 text-muted-foreground shrink-0" />
-                  <select className="bg-transparent text-sm h-11 outline-none w-full text-foreground">
+                  <select className="bg-card text-card-foreground text-sm h-11 outline-none w-full cursor-pointer">
                     {areas.map((a, i) => (
-                      <option key={i}>{lang === "ar" ? a.ar : a.en}</option>
+                      <option key={i} className="bg-card text-card-foreground">
+                        {lang === "ar" ? a.ar : a.en}
+                      </option>
                     ))}
                   </select>
                 </div>
