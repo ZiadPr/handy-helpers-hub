@@ -1,4 +1,3 @@
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
@@ -17,35 +16,31 @@ import Auth from "./pages/Auth";
 import NotFound from "./pages/NotFound.tsx";
 import Leaderboard from "./pages/Leaderboard";
 
-const queryClient = new QueryClient();
-
 const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <ThemeProvider>
-      <LanguageProvider>
-        <TooltipProvider>
-          <Toaster />
-          <Sonner />
-          <BrowserRouter>
-            <Routes>
-              <Route element={<SiteLayout />}>
-                <Route path="/" element={<Index />} />
-                <Route path="/search" element={<Search />} />
-                <Route path="/leaderboard" element={<Leaderboard />} />
-                <Route path="/provider/:id" element={<ProviderProfile />} />
-                <Route path="/request/:id" element={<ServiceRequest />} />
-                <Route path="/chat" element={<Chat />} />
-                <Route path="/dashboard" element={<CustomerDashboard />} />
-                <Route path="/provider" element={<ProviderDashboard />} />
-                <Route path="/auth" element={<Auth />} />
-              </Route>
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </BrowserRouter>
-        </TooltipProvider>
-      </LanguageProvider>
-    </ThemeProvider>
-  </QueryClientProvider>
+  <ThemeProvider>
+    <LanguageProvider>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <Routes>
+            <Route element={<SiteLayout />}>
+              <Route path="/" element={<Index />} />
+              <Route path="/search" element={<Search />} />
+              <Route path="/leaderboard" element={<Leaderboard />} />
+              <Route path="/provider/:id" element={<ProviderProfile />} />
+              <Route path="/request/:id" element={<ServiceRequest />} />
+              <Route path="/chat" element={<Chat />} />
+              <Route path="/dashboard" element={<CustomerDashboard />} />
+              <Route path="/provider" element={<ProviderDashboard />} />
+              <Route path="/auth" element={<Auth />} />
+            </Route>
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </TooltipProvider>
+    </LanguageProvider>
+  </ThemeProvider>
 );
 
 export default App;
