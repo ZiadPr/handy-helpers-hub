@@ -3,10 +3,11 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Stars } from "./Stars";
+import { VerifiedBadge } from "./VerifiedBadge";
 import { useLang } from "@/contexts/LanguageContext";
 import type { Provider } from "@/data/mock";
 import { translations } from "@/i18n/translations";
-import { MapPin, MessageCircle, ShieldCheck, Trophy, Zap } from "lucide-react";
+import { MapPin, MessageCircle, Trophy, Zap } from "lucide-react";
 
 export const ProviderCard = ({ provider }: { provider: Provider }) => {
   const { lang, t } = useLang();
@@ -19,11 +20,11 @@ export const ProviderCard = ({ provider }: { provider: Provider }) => {
       <div className="absolute inset-x-0 top-0 h-1 bg-gold-gradient opacity-0 group-hover:opacity-100 transition-opacity" />
       <div className="flex items-start gap-4">
         <div className="relative shrink-0">
-          <img src={provider.avatar} alt={name} className="h-16 w-16 rounded-2xl object-cover ring-2 ring-accent-soft" />
+          <img src={provider.avatar} alt={name} className="h-16 w-16 rounded-full object-cover ring-2 ring-accent-soft" />
           {provider.verified && (
-            <span className="absolute -bottom-1 -end-1 h-6 w-6 rounded-full bg-success text-success-foreground grid place-items-center ring-2 ring-card">
-              <ShieldCheck className="h-3.5 w-3.5" />
-            </span>
+            <div className="absolute -bottom-1 -end-1">
+              <VerifiedBadge provider={provider} size="sm" />
+            </div>
           )}
         </div>
         <div className="flex-1 min-w-0">
