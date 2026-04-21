@@ -63,6 +63,11 @@ export type Provider = {
   avatar: string;
   bioAr: string;
   bioEn: string;
+  joinedAt: string;
+  verifiedAt?: string;
+  idVerified?: boolean;
+  phoneVerified?: boolean;
+  licenseVerified?: boolean;
 };
 
 const initials = (name: string) =>
