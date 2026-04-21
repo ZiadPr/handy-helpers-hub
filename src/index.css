@@ -65,38 +65,48 @@
   }
 
   .dark {
-    --background: 162 50% 6%;
-    --foreground: 42 30% 94%;
+    --background: 162 35% 7%;
+    --foreground: 42 40% 96%;
 
-    --card: 162 45% 9%;
-    --card-foreground: 42 30% 94%;
+    --card: 162 32% 11%;
+    --card-foreground: 42 40% 96%;
 
-    --popover: 162 45% 9%;
-    --popover-foreground: 42 30% 94%;
+    --popover: 162 32% 11%;
+    --popover-foreground: 42 40% 96%;
 
-    --primary: 43 56% 54%;
+    --primary: 43 75% 62%;
     --primary-foreground: 162 78% 10%;
-    --primary-glow: 43 70% 64%;
+    --primary-glow: 43 85% 72%;
 
-    --secondary: 162 40% 14%;
-    --secondary-foreground: 42 30% 94%;
+    --secondary: 162 30% 16%;
+    --secondary-foreground: 42 40% 96%;
 
-    --muted: 162 40% 14%;
-    --muted-foreground: 42 15% 70%;
+    --muted: 162 30% 16%;
+    --muted-foreground: 42 25% 78%;
 
-    --accent: 43 56% 54%;
+    --accent: 43 75% 62%;
     --accent-foreground: 162 78% 10%;
-    --accent-soft: 162 40% 18%;
+    --accent-soft: 162 30% 20%;
+
+    --gold: 43 80% 64%;
+    --gold-foreground: 162 78% 10%;
 
     --destructive: 0 62% 42%;
     --destructive-foreground: 0 0% 98%;
 
-    --success: 152 50% 45%;
+    --success: 152 60% 50%;
     --success-foreground: 0 0% 98%;
 
-    --border: 162 35% 18%;
-    --input: 162 35% 18%;
-    --ring: 43 56% 54%;
+    --border: 162 25% 20%;
+    --input: 162 25% 20%;
+    --ring: 43 75% 62%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(43 80% 60%) 0%, hsl(43 70% 50%) 60%, hsl(43 60% 42%) 130%);
+    --gradient-gold: linear-gradient(135deg, hsl(43 85% 70%), hsl(43 70% 52%));
+    --gradient-hero: radial-gradient(ellipse at top right, hsl(43 75% 55% / 0.18), transparent 55%), linear-gradient(160deg, hsl(162 50% 6%), hsl(162 40% 10%) 60%, hsl(162 30% 14%));
+    --shadow-elegant: 0 20px 50px -25px hsl(0 0% 0% / 0.6);
+    --shadow-gold: 0 18px 40px -20px hsl(43 75% 55% / 0.45);
+    --shadow-card: 0 6px 24px -10px hsl(0 0% 0% / 0.4);
 
     --sidebar-background: 162 60% 8%;
     --sidebar-foreground: 42 30% 94%;
