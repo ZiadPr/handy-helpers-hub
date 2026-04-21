@@ -7,6 +7,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Progress } from "@/components/ui/progress";
 import { Stars } from "@/components/site/Stars";
 import { VerifiedBadge } from "@/components/site/VerifiedBadge";
+import { StickyMobileCTA } from "@/components/site/StickyMobileCTA";
 import { useLang } from "@/contexts/LanguageContext";
 import { translations } from "@/i18n/translations";
 import { Phone, MessageCircle, MapPin, Clock, ShieldCheck, Trophy, Zap, Crown, Award } from "lucide-react";
@@ -226,6 +227,8 @@ const ProviderProfile = () => {
           </Card>
         </aside>
       </div>
+      <StickyMobileCTA providerId={p.id} />
+      <div className="md:hidden h-20" />
     </div>
   );
 };

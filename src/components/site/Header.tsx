@@ -17,6 +17,7 @@ export const Header = () => {
     { to: "/", label: t.nav.home },
     { to: "/search", label: t.nav.providers },
     { to: "/search?type=shop", label: t.nav.shops },
+    { to: "/leaderboard", label: t.nav.leaderboard },
     { to: "/#how", label: t.nav.howItWorks },
   ];
 
