@@ -125,20 +125,23 @@
   }
 
   html {
-    font-family: "Manrope", "IBM Plex Sans Arabic", system-ui, sans-serif;
+    font-family: "Manrope", "IBM Plex Sans Arabic", "Cairo", "Tajawal", "Noto Naskh Arabic", "Segoe UI", Tahoma, Arial, system-ui, sans-serif;
   }
 
   html[dir="rtl"] {
-    font-family: "IBM Plex Sans Arabic", "Manrope", system-ui, sans-serif;
+    font-family: "IBM Plex Sans Arabic", "Cairo", "Tajawal", "Noto Naskh Arabic", "Segoe UI", Tahoma, Arial, system-ui, sans-serif;
   }
 
   body {
     @apply bg-background text-foreground antialiased;
     font-feature-settings: "ss01", "cv11";
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   h1, h2, h3, h4, h5, h6, .font-display {
-    font-family: "Sora", "IBM Plex Sans Arabic", system-ui, sans-serif;
+    font-family: "Sora", "IBM Plex Sans Arabic", "Cairo", "Noto Kufi Arabic", "Segoe UI", Tahoma, Arial, system-ui, sans-serif;
     letter-spacing: -0.015em;
   }
 
@@ -149,8 +152,9 @@
   html[dir="rtl"] h5,
   html[dir="rtl"] h6,
   html[dir="rtl"] .font-display {
-    font-family: "IBM Plex Sans Arabic", "Sora", system-ui, sans-serif;
+    font-family: "Noto Kufi Arabic", "Cairo", "IBM Plex Sans Arabic", "Tajawal", "Segoe UI", Tahoma, Arial, system-ui, sans-serif;
     letter-spacing: 0;
+    font-weight: 700;
   }
 }
 
