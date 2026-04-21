@@ -2,6 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Logo } from "./Logo";
 import { LanguageToggle } from "./LanguageToggle";
+import { ThemeToggle } from "./ThemeToggle";
 import { useLang } from "@/contexts/LanguageContext";
 import { MessageCircle, LayoutDashboard, Menu, X } from "lucide-react";
 import { useState } from "react";
@@ -54,6 +55,7 @@ export const Header = () => {
             </Button>
           </Link>
           <LanguageToggle />
+          <ThemeToggle />
           <Link to="/auth" className="hidden sm:inline-flex">
             <Button size="sm" className="bg-primary-gradient text-primary-foreground hover:opacity-95 shadow-elegant">
               {t.nav.signup}
