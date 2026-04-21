@@ -15,6 +15,7 @@ const dict = {
       dashboard: "لوحتي",
       provider: "بوابة الصنايعي",
       chat: "المحادثات",
+      leaderboard: "لوحة الشرف",
     },
     hero: {
       eyebrow: "أكثر من 12,000 محترف موثّق",
@@ -39,6 +40,8 @@ const dict = {
       featuredTitle: "مميزون هذا الأسبوع",
       howTitle: "كيف تعمل صنايعي؟",
       howSub: "ثلاث خطوات بسيطة من البحث للتنفيذ",
+      leaderboardTitle: "لوحة الشرف",
+      leaderboardSub: "أفضل المحترفين على المنصة هذا الشهر",
     },
     main: {
       pros: "صنايعية",
@@ -124,6 +127,7 @@ const dict = {
       dashboard: "Dashboard",
       provider: "Provider portal",
       chat: "Chats",
+      leaderboard: "Leaderboard",
     },
     hero: {
       eyebrow: "Over 12,000 verified pros",
@@ -148,6 +152,8 @@ const dict = {
       featuredTitle: "Featured this week",
       howTitle: "How Sanaye3i works",
       howSub: "Three simple steps from search to done",
+      leaderboardTitle: "Leaderboard",
+      leaderboardSub: "Top-ranked pros on the platform this month",
     },
     main: {
       pros: "Tradespeople",
